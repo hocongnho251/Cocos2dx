@@ -1,32 +1,23 @@
-#include"SpaceShooter.h"
+#include"Rock.h"
 
-SpaceShooter::SpaceShooter(cocos2d::Scene* scene)
+Rock::Rock(cocos2d::Scene* scene)
 {
 
 }
 
-SpaceShooter::~SpaceShooter()
+Rock::~Rock()
 {
 
 }
 
-void SpaceShooter::Init()
+void Rock::Init()
 {
 
 }
 
-void SpaceShooter::Update(float deltaTime)
+void Rock::Update(float deltaTime)
 {
 
 }
 
-void SpaceShooter::Shoot()
-{
-
-}
-
-void SpaceShooter::Collision(std::vector<Rock*>)
-{
-
-}
 

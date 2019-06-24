@@ -1,9 +1,11 @@
 #include "cocos2d.h"
 #include "Objects.h"
 #include<iostream>
+#include"Rock.h"
 
 
-class SpaceShooter :public Objects {
+class SpaceShooter :public Objects 
+{
 public:
 	std::list<Objects*> m_bullets;
 	SpaceShooter(cocos2d::Scene* scene);

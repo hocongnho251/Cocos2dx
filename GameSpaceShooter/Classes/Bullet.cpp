@@ -1,32 +1,25 @@
-#include"SpaceShooter.h"
+#include"Bullet.h"
 
-SpaceShooter::SpaceShooter(cocos2d::Scene* scene)
+Bullet::Bullet(cocos2d::Scene* scene)
+{
+	cocos2d::Sprite* sprite = cocos2d::Sprite::create("bullet.png");
+	sprite->setPosition(10,10);
+	scene->addChild(sprite);
+}
+
+Bullet::~Bullet()
 {
 
 }
 
-SpaceShooter::~SpaceShooter()
+void Bullet::Init()
 {
 
 }
 
-void SpaceShooter::Init()
+void Bullet::Update(float deltaTime)
 {
 
 }
 
-void SpaceShooter::Update(float deltaTime)
-{
-
-}
-
-void SpaceShooter::Shoot()
-{
-
-}
-
-void SpaceShooter::Collision(std::vector<Rock*>)
-{
-
-}
 
