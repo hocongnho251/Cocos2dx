@@ -1,32 +1,51 @@
-#include"SpaceShooter.h"
+#include "Resourcemanager.h"
 
-SpaceShooter::SpaceShooter(cocos2d::Scene* scene)
+ResourceManager::ResourceManager()
+{
+	this->m_sprites;
+	this->s_instance = 0;
+	this->m_buttons;
+	this->m_dataFolderPath;
+	this->m_labels;
+}
+
+ResourceManager::~ResourceManager()
+{
+	
+
+}
+
+ResourceManager* ResourceManager::GetInstance()
+{
+	if (s_instance == 0)
+	{
+		s_instance = new ResourceManager();
+	}
+
+	return s_instance;
+}
+
+void ResourceManager::Init(const std::string path)
 {
 
 }
 
-SpaceShooter::~SpaceShooter()
+void ResourceManager::Load(std::string fileName)
 {
 
 }
 
-void SpaceShooter::Init()
+Sprite* ResourceManager::GetSpriteById(char* id)
 {
 
 }
 
-void SpaceShooter::Update(float deltaTime)
+ui::Button* ResourceManager::GetButtonById(char* id)
 {
 
 }
 
-void SpaceShooter::Shoot()
+Label* ResourceManager:: GetLabelById(char* id)
 {
 
 }
-
-void SpaceShooter::Collision(std::vector<Rock*>)
-{
-
-}
-
