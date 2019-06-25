@@ -9,7 +9,7 @@ USING_NS_CC;
 
 Objects::Objects()
 {
-
+	this->m_sprite;
 }
 
 

@@ -1,7 +1,9 @@
+#pragma once
 #include "cocos2d.h"
 #include "Objects.h"
 #include<iostream>
 #include"Rock.h"
+#include"ResourceManager.h"
 
 
 class SpaceShooter :public Objects 

@@ -2,9 +2,9 @@
 
 Bullet::Bullet(cocos2d::Scene* scene)
 {
-	cocos2d::Sprite* sprite = cocos2d::Sprite::create("bullet.png");
-	sprite->setPosition(10,10);
-	scene->addChild(sprite);
+	this->m_sprite = ResourceManager::GetInstance()->GetSpriteById('2');
+	Init();
+	scene->addChild(m_sprite);
 }
 
 Bullet::~Bullet()
@@ -14,7 +14,9 @@ Bullet::~Bullet()
 
 void Bullet::Init()
 {
-
+	auto visibleSize = Director::getInstance()->getVisibleSize();
+	Vec2 origin = Director::getInstance()->getVisibleOrigin();
+	m_sprite->setPosition(visibleSize.height / 2, visibleSize.width / 2);
 }
 
 void Bullet::Update(float deltaTime)

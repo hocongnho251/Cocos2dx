@@ -1,16 +1,14 @@
-#include "cocos2d.h"
-#include "Objects.h"
-#include<iostream>
+#pragma once
+#include"cocos2d.h"
+#include"ResourceManager.h"
 
+USING_NS_CC;
 
-class SpaceShooter :public Objects {
+class LoadingScene :public cocos2d::Scene
+{
 public:
-	std::list<Objects*> m_bullets;
-	SpaceShooter(cocos2d::Scene* scene);
-	~SpaceShooter();
-	void Init() override;
-	void Update(float deltaTime) override;
-	void Shoot();
-	void Collision(std::vector<Rock*>);
-
+    static cocos2d::Scene* createScene();
+	virtual bool init();
+	void update(float deltaTime);
+	CREATE_FUNC(LoadingScene);
 };

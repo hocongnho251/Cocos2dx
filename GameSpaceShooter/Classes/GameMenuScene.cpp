@@ -1,32 +1,36 @@
-#include"SpaceShooter.h"
+#include"GameMenuScene.h"
+#include"ui/CocosGUI.h"
+#include"LoadingScene.h"
 
-SpaceShooter::SpaceShooter(cocos2d::Scene* scene)
+Scene* GameMenuScene::createScene()
 {
-
+	return GameMenuScene::create();
 }
 
-SpaceShooter::~SpaceShooter()
+bool GameMenuScene::init()
 {
+	if (!Scene::init())
+	{
+		return false;
+	}
+	auto logo = ResourceManager::GetInstance()->GetSpriteById(1);
+	logo->setPosition(Vec2(320, 600));
+	logo->removeFromParent();
+	addChild(logo, 0);
+	auto buttonPlay = ResourceManager::GetInstance()->GetButtonById(0);
+	buttonPlay->setPosition(Vec2(320, 480));
+	buttonPlay->addClickEventListener([&] (Ref* event) {
+		auto gotoNext = CallFunc::create([]() {
 
+			Director::getInstance()->replaceScene(LoadingScene::createScene());
+
+		});
+
+		auto sequence = Sequence::create(DelayTime::create(3), gotoNext,
+			nullptr);
+
+		runAction(sequence);
+	});
+	addChild(buttonPlay);
+	return true;
 }
-
-void SpaceShooter::Init()
-{
-
-}
-
-void SpaceShooter::Update(float deltaTime)
-{
-
-}
-
-void SpaceShooter::Shoot()
-{
-
-}
-
-void SpaceShooter::Collision(std::vector<Rock*>)
-{
-
-}
-
