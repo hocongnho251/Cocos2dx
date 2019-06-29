@@ -10,6 +10,9 @@ public :
 	~Objects();
 	virtual void Init()=0;
 	virtual void Update(float deltaTime)=0;
+	void setSptire(Sprite* sprite);
+	Sprite* getSprite();
 
+	Sprite * DuplicateSprite(Sprite * sprite);
 
 };

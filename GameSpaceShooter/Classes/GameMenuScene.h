@@ -1,6 +1,7 @@
 #pragma once
 #include"cocos2d.h"
 #include"ResourceManager.h"
+#include"LoadingScene.h"
 
 class GameMenuScene:public cocos2d:: Scene
 {

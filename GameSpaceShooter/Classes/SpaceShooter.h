@@ -4,6 +4,10 @@
 #include<iostream>
 #include"Rock.h"
 #include"ResourceManager.h"
+#include"cocos2d.h"
+#include "Rock.h"
+
+USING_NS_CC;
 
 
 class SpaceShooter :public Objects 

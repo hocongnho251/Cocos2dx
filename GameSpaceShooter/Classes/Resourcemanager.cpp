@@ -82,7 +82,7 @@ void ResourceManager::Load(std::string fileName)
 			tempPathPressedButton.replace(0, 2, this->m_dataFolderPath);
 			button = ui::Button::create(tempPathNormalButton, tempPathPressedButton);
 			button->retain();
-			m_buttons.insert(pair<char, ui::Button*>(tempId, button));
+			m_buttons.insert(pair<int, ui::Button*>(tempId, button));
 		}
 		//Read Label
 		fileInPut >> stringIgnore;
@@ -94,9 +94,9 @@ void ResourceManager::Load(std::string fileName)
 			fileInPut >> stringIgnore;
 			fileInPut >> tempPath;
 			tempPath.replace(0, 2, this->m_dataFolderPath);
-			label = Label::createWithTTF("", tempPath,20);
+			label = Label::createWithTTF("Loading", tempPath,20);
 			//label->retain();
-			m_labels.insert(pair<char, Label*>(tempId, label));
+			m_labels.insert(pair<int, Label*>(tempId, label));
 
 		}
 
